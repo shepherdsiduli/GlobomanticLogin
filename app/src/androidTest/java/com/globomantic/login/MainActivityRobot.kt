@@ -17,11 +17,12 @@ class MainActivityRobot {
     }
 
     fun enterPassword(password: String){
+        passwordEditText().perform(scrollTo())
         passwordEditText().perform(typeText(password))
     }
 
     fun clickLoginButton(){
-//        loginButton().perform(scrollTo())
+        loginButton().perform(scrollTo())
         loginButton().perform(click())
     }
 
