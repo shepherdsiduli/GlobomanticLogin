@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="shadow_radius">1dp</dimen>
+    <dimen name="small_radius">2dp</dimen>
+    <dimen name="large_radius">4dp</dimen>
+    <dimen name="logo_size">256dp</dimen>
+</resources>
