@@ -18,7 +18,6 @@ class LogoView : View {
     private lateinit var drawDecorativeDots: DrawDacorativeDots
     private val dimen = (context.applicationContext as Globomantic).logoSize
 
-
     constructor(context: Context) : super(context) {
         init()
     }
@@ -27,7 +26,11 @@ class LogoView : View {
         init()
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
         init()
     }
 
@@ -37,10 +40,10 @@ class LogoView : View {
             isAntiAlias = true
             style = Paint.Style.FILL
             setShadowLayer(
-                    (context.applicationContext as Globomantic).shadowRadius,
-                    0f,
-                    0f,
-                    (context.applicationContext as Globomantic).shadowColor
+                (context.applicationContext as Globomantic).shadowRadius,
+                0f,
+                0f,
+                (context.applicationContext as Globomantic).shadowColor
             )
         }
 
@@ -49,25 +52,25 @@ class LogoView : View {
             isAntiAlias = true
             style = Paint.Style.FILL
             setShadowLayer(
-                    (context.applicationContext as Globomantic).shadowRadius,
-                    0f,
-                    0f,
-                    (context.applicationContext as Globomantic).shadowColor
+                (context.applicationContext as Globomantic).shadowRadius,
+                0f,
+                0f,
+                (context.applicationContext as Globomantic).shadowColor
             )
         }
 
         val adjustToSquare = AdjustToSquare()
 
-         val smallRadius = (context.applicationContext as Globomantic).smallRadius
-         val largeRadius = (context.applicationContext as Globomantic).largeRadius
+        val smallRadius = (context.applicationContext as Globomantic).smallRadius
+        val largeRadius = (context.applicationContext as Globomantic).largeRadius
 
         drawDecorativeDots = DrawDacorativeDots(
-                adjustToSquare,
-                smallRadius,
-                largeRadius,
-                smallPaint,
-                largePaint,
-                dimen
+            adjustToSquare,
+            smallRadius,
+            largeRadius,
+            smallPaint,
+            largePaint,
+            dimen
         )
     }
 
@@ -76,10 +79,14 @@ class LogoView : View {
 
         val dimen = (context.applicationContext as Globomantic).logoSize
 
-        val d: Drawable = ContextCompat.getDrawable(context, R.drawable.ic_launcher_background)!! //logo_globomatics
+        val d: Drawable = ContextCompat.getDrawable(
+            context,
+            R.drawable.ic_launcher_background
+        )!! //logo_globomatics
 
-        d.setBounds((dimen/10).toInt(), (dimen / 10).toInt(), (9 * dimen / 10).toInt(),
-            (9 * dimen / 10).toInt()
+        d.setBounds(
+            dimen / 10, dimen / 10, 9 * dimen / 10,
+            9 * dimen / 10
         )
         d.draw(canvas)
 
